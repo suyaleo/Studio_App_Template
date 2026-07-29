@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -34,7 +34,7 @@ jobs:
         run: python -m pytest api/tests
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
@@ -54,13 +54,13 @@ jobs:
       - name: Inspect non-root runtime and OCI labels
         run: |
           test "$(docker image inspect studio-app-template:ci --format '{{.Config.User}}')" = "studio"
-          test "$(docker image inspect studio-app-template:ci --format '{{index .Config.Labels \"org.opencontainers.image.licenses\"}}')" = "Apache-2.0"
+          test "$(docker image inspect studio-app-template:ci --format '{{index .Config.Labels "org.opencontainers.image.licenses"}}')" = "Apache-2.0"
 
   compose-smoke-test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Start Compose app
         run: docker compose up --build --wait
