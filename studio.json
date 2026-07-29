@@ -1,0 +1,14 @@
+{
+  "$schema": "./studio.schema.json",
+  "schemaVersion": 1,
+  "displayName": "Starter Studio",
+  "repository": "Studio_App_Template",
+  "slug": "studio-app-template",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "container": "ghcr.io/suyaleo/studio-app-template",
+  "defaultPort": 8080,
+  "healthEndpoint": "/api/health",
+  "dataDirectory": "/data",
+  "aiProfile": "studio-app-template"
+}

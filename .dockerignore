@@ -1,0 +1,16 @@
+.git
+.github
+.env
+.venv
+**/__pycache__
+**/.pytest_cache
+web/node_modules
+web/dist
+data
+coverage
+*.log
+*.md
+!NOTICE
+!THIRD_PARTY_NOTICES.md
+!TRADEMARKS.md
+!SECURITY.md
